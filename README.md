@@ -1,57 +1,51 @@
-# Project Name
+---
+services: cosmos-db
+platforms: mongoose
+author: viviswan
+---
 
-(short, 1-3 sentenced, description of the project)
+# Using Mongo ReadPreference with Azure Cosmos DB's MongoDB API
+Azure Cosmos DB is a globally distributed multi-model database. One of the supported APIs is the MongoDB API, which provides a document model and support for client drivers in many platforms. This sample shows you how to use MongoDB ReadPreference against Azure Cosmos DB with MongoDB API using Mongoose framework.
 
-## Features
+## Running this sample
 
-This project framework provides the following features:
+* Before you can run this sample, you must have the following prerequisites:
 
-* Feature 1
-* Feature 2
-* ...
+   * An active Azure account. If you don't have one, you can sign up for a [free account](https://azure.microsoft.com/free/). Alternatively, you can use the [Azure Cosmos DB Emulator](https://docs.microsoft.com/azure/cosmos-db/local-emulator) for this tutorial.
+   * Node JS installation
 
-## Getting Started
+* Then, clone this repository.
 
-### Prerequisites
+* Next, substitute the `remoteUrl` in *config/database.js* with your Cosmos DB account connection string. 
 
-(ideally very short, if any)
+* `npm install` to install dependencies (mongo driver)
 
-- OS
-- Library version
-- ...
+* `npm start`
 
-### Installation
+* The application starts at `http://localhost:8080`. Visit this Url to access the application.
 
-(ideally very short)
+## About the code
+The code included in this sample is intended to illustrate using ReadPreference and tags with Azure Cosmos DB with the MongoDB API for performing reads across geo replicated read regions. This application is a fork of this [TODO application](https://github.com/scotch-io/node-todo) and modified to add read preference setting.
 
-- npm install [package name]
-- mvn install
-- ...
+## Read preference Settings
 
-### Quickstart
-(Add steps to get up and running quickly)
+* Refer `getTodos` method in `app\routes.js` for setting Read preference. Find the snippet below:
 
-1. git clone [repository clone url]
-2. cd [respository name]
-3. ...
+```javascript
+    Todo.find(function (err, todos) {
 
+        // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+        if (err) {
+            res.send(err);
+        }
 
-## Demo
+        res.json(todos); // return all todos in JSON format
+    }).read('secondary');
+```
 
-A demo app is included to show how to use the project.
+## More information
 
-To run the demo, follow these steps:
-
-(Add steps to start up the demo)
-
-1.
-2.
-3.
-
-## Resources
-
-(Any additional resources or related projects)
-
-- Link to supporting information
-- Link to similar sample
-- ...
+- [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction)
+- [Azure Cosmos DB : MongoDB API](https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction)
+- [Mongoose framwork documentation](http://mongoosejs.com/docs/api.html)
+- [MongoDB NodeJS ReadPreference documentation](http://mongodb.github.io/node-mongodb-native/2.2/api/ReadPreference.html)
