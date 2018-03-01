@@ -25,7 +25,7 @@ Azure Cosmos DB is a globally distributed multi-model database. One of the suppo
 * The application starts at `http://localhost:8080`. Visit this Url to access the application.
 
 ## About the code
-The code included in this sample is intended to illustrate using ReadPreference and tags with Azure Cosmos DB with the MongoDB API for performing reads across geo replicated read regions.
+The code included in this sample is intended to illustrate using ReadPreference and tags with Azure Cosmos DB with the MongoDB API for performing reads across geo replicated read regions. This application is a fork of this [TODO application](https://github.com/scotch-io/node-todo) and modified to add read preference setting.
 
 ## Read preference Settings
 
