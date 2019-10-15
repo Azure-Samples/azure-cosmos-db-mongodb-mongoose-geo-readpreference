@@ -10,6 +10,7 @@ urlFragment: azure-cosmos-db-mongodb-mongoose-geo-readpreference
 ---
 
 # Using ReadPreference command with Azure Cosmos DB for MongoDB API
+
 Azure Cosmos DB is a fully managed globally distributed, multi-model database service, transparently replicating your data across any number of Azure regions. You can elastically scale throughput and storage, and take advantage of fast, single-digit-millisecond data access using the API of your choice backed by 99.999 SLA. This sample shows you how to use ReadPreference command against Azure Cosmos DB for MongoDB API from a Mongoose framework app.
 
 ## Running this sample
@@ -30,6 +31,7 @@ Azure Cosmos DB is a fully managed globally distributed, multi-model database se
 * The application starts at `http://localhost:8080`. Visit this Url to access the application.
 
 ## About the code
+
 The code included in this sample is intended to illustrate using ReadPreference and tags against an Azure Cosmos DB for MongoDB API account for performing reads across geo replicated read regions. This application is a fork of this [TODO application](https://github.com/scotch-io/node-todo) and modified to add read preference setting.
 
 ## Read preference Settings
