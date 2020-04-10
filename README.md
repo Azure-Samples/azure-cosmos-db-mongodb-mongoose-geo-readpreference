@@ -54,4 +54,4 @@ The code included in this sample is intended to illustrate using ReadPreference 
 
 - [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction)
 - [Azure Cosmos DB for MongoDB API](https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction)
-- [Mongoose framwork documentation](http://mongoosejs.com/docs/api.html)
+- [Mongoose framework documentation](http://mongoosejs.com/docs/api.html)
